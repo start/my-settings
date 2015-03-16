@@ -1,0 +1,18 @@
+# Use Vimmish key-bindings
+set editing-mode vi
+
+# Show all options if tab-completion is ambiguous
+set show-all-if-ambiguous on
+
+# Ignore case for tab-completion
+set completion-ignore-case on
+
+# Indicate directories with a slash for tab completion...
+set mark-directories on
+
+# ...And do the same for symlinked directories
+set mark-symlinked-directories on
+
+# Use the up/down arrows for history searching
+"\e[A": history-search-backward
+"\e[B": history-search-forward

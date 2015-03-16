@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Get the directory containing this script
+scriptDir="$(dirname "$0")"
+# Fully expand the path
+expandedScriptDir="$(cd "$scriptDir"; pwd)"
+
+# Find all dotfiles in this script's directory
+find "$expandedScriptDir" -mindepth 1 -maxdepth 1 -type f -name '.*' |
+  while read dotfile; do
+    # Hard link each file to an identically named file in the home directory,
+    # overwriting any files that already exist
+    ln -f "$dotfile" ~/"$(basename "$dotfile")"
+  done
