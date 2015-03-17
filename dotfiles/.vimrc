@@ -12,8 +12,8 @@ if isdirectory(vundlePath)
   Bundle 'gmarik/vundle'
 endif
 
-" Enable filetype detection, filetype-specific plugins, and filetype-specific
-" indentation rules
+" Enable filetype detection, filetype-specific plugins, and
+" filetype-specific indentation rules
 filetype indent plugin on
 
 " Use utf-8 for everything inside of Vim
@@ -28,8 +28,8 @@ set noerrorbells visualbell t_vb=
 " Allow a buffer to be hidden without having to save it
 set hidden
 
-" Hard-wrap lines at 77 characters
-set textwidth=77
+" Hard-wrap lines at 76 characters
+set textwidth=76
 
 " Hard-wrap lines at 72 characters when composing Git commit messages
 autocmd FileType gitcommit set textwidth=72
@@ -45,6 +45,9 @@ set ignorecase smartcase incsearch gdefault
 
 " In the status line, show the current command and cursor position
 set showcmd ruler
+
+" Show line numbers
+set number
 
 " Always the show status line
 set laststatus=2
