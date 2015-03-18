@@ -61,10 +61,6 @@ set undolevels=1000
 " Keep cursor 9 lines from the screen's edge
 set scrolloff=9
 
-" Make 'j' and 'k' navigate screen lines, not file lines
-nnoremap j gj
-nnoremap k gk
-
 " Resize windows. Don't waste the arrow keys by disabling them
 noremap <up> <c-w>+
 noremap <down> <c-w>-
