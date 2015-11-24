@@ -9,16 +9,31 @@ set_bash_prompt() {
   local color_invert="$(get_bash_color "7")"
 
   # `\w` is the working directory
-  local directory_part="$color_invert\w"
+  local directory="$color_invert\w"
 
-  # `get_git_part` will be executed every prompt.
-  local git_part="$color_reset $color_invert\$(get_git_part)"
+  # `get_git_part` will be executed every prompt
+  local git_branch="$color_invert\$(get_git_part)"
 
   # `\$` displays # or $ depending on whether the user is running as root
-  local prompt_part="$color_invert\$$color_reset"
+  local prompt_char="$color_invert\$"
+
+  # Reset the color before each space (though for now, there's just one
+  # space)
+  local space="$color_reset "
+
+  # Example: 
+  # ~/projects/broodwar-remake (master)
+  local dir_info_line="$directory$space$git_branch"
+
+  # Example:
+  # $
+  local prompt_line="$prompt_char"
+
+  # Reset the color before each newline
+  local newline="$color_reset\n"
 
   # Set the Bash prompt
-  export PS1="\n$directory_part$git_part\n$prompt_part "
+  export PS1="$newline$dir_info_line$newline$prompt_line$space"
 }
 
 get_git_part() {
