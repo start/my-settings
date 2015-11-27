@@ -1,8 +1,31 @@
 # Use Vim as the default editor
 export EDITOR=vim
 
-# Resets both foreground and background colors
+# Open Visual Studio Code from the command line. Source:
+# https://code.visualstudio.com/Docs/editor/setup
+code () {
+  # According to its [source code -> https://goo.gl/hxCeSy],
+  # VSCODE_CWD="$PWD" changes Visual Studio Code's current working
+  # directory.
+  #
+  # The `VSCODE_CWD` variable exists in the context of the `open` command
+  # because they're on the same line.
+  #
+  # * The '-n' option opens a new instance of the app
+  # * The `-b` option allows you to specify a bundle identifier
+  VSCODE_CWD="$PWD" \
+    open -n -b "com.microsoft.VSCode" --args $*
+}
+
+# This resets both foreground and background colors. This'll be used when
+# constructing the Bash prompt
 color_reset="\[\e[0m\]"
+
+# Gets a Bash color from its color code
+get_bash_color() {
+  local color_code="$1"
+  printf "%s" "$color_reset\[\033[${color_code}m\]"  
+}
 
 set_bash_prompt() {
   # Swaps foreground and background colors
@@ -63,10 +86,6 @@ get_git_part() {
       printf "%s" "<detached $summary>"
       ;;
   esac
-}
-
-get_bash_color() {
-  printf "%s" "$color_reset\[\033[$1m\]"  
 }
 
 set_bash_prompt
