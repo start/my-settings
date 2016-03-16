@@ -65,7 +65,7 @@ get_git_part() {
     # detached.
     1)
       local hash="$(git rev-parse HEAD)"
-      # `%h` is the shortened hash of the commit; %s is the subject.
+      # `%h` is the shortened hash of the commit; `%s` is the subject.
       local summary="$(git log -n 1 $commitHash --pretty=format:'%h: %s')"
       printf "%s" "<detached $summary>"
       ;;
