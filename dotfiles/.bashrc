@@ -73,4 +73,3 @@ get_git_part() {
 }
 
 set_bash_prompt
-

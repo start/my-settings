@@ -101,4 +101,3 @@ function! TabOrComplete(completeBackward)
     return "\<tab>"
   endif
 endfunction
-

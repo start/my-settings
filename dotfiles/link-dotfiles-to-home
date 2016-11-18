@@ -2,6 +2,7 @@
 
 # Get the directory containing this script
 scriptDir="$(dirname "$0")"
+
 # Fully expand the path
 expandedScriptDir="$(cd "$scriptDir"; pwd)"
 

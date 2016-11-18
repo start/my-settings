@@ -4,4 +4,3 @@ set guioptions-=m
 
 " Disable lovely error-induced screen flashes
 set t_vb=
-
