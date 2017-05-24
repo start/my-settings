@@ -26,8 +26,10 @@ Media_Play_Pause::F7
 
 ; This keyboard only has 11 hotkeys along the
 ; top. Of the 12 traditional function keys, I
-; use F8 least frequently, so that's the one
-; I'm skipping.
+; use F8 least frequently, so I'm moving it
+; to the Browser_Search key (left of the arrow
+; keys).
+Browser_Search::F8
 
 Media_Next::F9
 Volume_Down::F10
