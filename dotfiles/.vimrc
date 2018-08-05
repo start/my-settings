@@ -61,7 +61,7 @@ set undolevels=1000
 " Keep cursor 9 lines from the screen's edge
 set scrolloff=9
 
-" Resize windows. Don't waste the arrow keys by disabling them
+" Resize windows with arrow keys
 noremap <up> <c-w>+
 noremap <down> <c-w>-
 noremap <left> <c-w><
@@ -72,10 +72,6 @@ noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
-
-" My left pinky doesn't like having to press shift repeatedly
-noremap ; :
-noremap : ;
 
 " Make Y behave like D and C
 noremap Y y$
