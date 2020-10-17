@@ -1,17 +1,3 @@
-let vundlePath = expand('$HOME/.vim/bundle/Vundle.vim/')
-
-" Is Vundle installed?
-if isdirectory(vundlePath)
-  " Vundle requires that `filetype` initially be set to `off`
-  filetype off
-
-  execute 'set runtimepath+=' . vundlePath
-  call vundle#rc()
-
-  " This too is required. Vundle has to manage itself
-  Bundle 'gmarik/vundle'
-endif
-
 " Enable filetype detection, filetype-specific plugins, and
 " filetype-specific indentation rules
 filetype indent plugin on
@@ -27,9 +13,6 @@ set noerrorbells visualbell t_vb=
 
 " Allow a buffer to be hidden without having to save it
 set hidden
-
-" Hard-wrap lines at 76 characters
-set textwidth=76
 
 " Hard-wrap lines at 72 characters when composing Git commit messages
 autocmd FileType gitcommit set textwidth=72
